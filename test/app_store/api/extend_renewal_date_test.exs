@@ -3,7 +3,7 @@ defmodule AppStore.API.ExtendRenewalDateTest do
 
   alias AppStore.API.ExtendRenewalDate
 
-  describe "extend/3" do
+  describe "extend_renewal_date/3" do
     test "Get a history of transactions", %{bypass: bypass, app_store: app_store} do
       Bypass.expect_once(bypass, "PUT", "/inApps/v1/subscriptions/extend/the-transaction-id", fn conn ->
         conn
@@ -12,7 +12,7 @@ defmodule AppStore.API.ExtendRenewalDateTest do
       end)
 
       {:ok, %AppStore.API.Response{body: body, status: status}} =
-        ExtendRenewalDate.extend(
+        ExtendRenewalDate.extend_renewal_date(
           app_store.api_config,
           "token",
           "the-transaction-id",

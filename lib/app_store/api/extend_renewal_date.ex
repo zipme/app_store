@@ -14,9 +14,9 @@ defmodule AppStore.API.ExtendRenewalDate do
 
   Official documentation: https://developer.apple.com/documentation/appstoreserverapi/extend_a_subscription_renewal_date
   """
-  @spec extend(Config.t(), String.t(), original_transaction_id, map) ::
+  @spec extend_renewal_date(Config.t(), String.t(), original_transaction_id, map) ::
           {:error, Error.t()} | {:ok, Response.t()}
-  def extend(%Config{} = api_config, token, original_transaction_id, body)
+  def extend_renewal_date(%Config{} = api_config, token, original_transaction_id, body)
       when is_map(body) do
     path = "#{@path_prefix}/#{original_transaction_id}"
 
