@@ -1,4 +1,4 @@
-defmodule AppStore.API.SubscriptionStatus do
+defmodule AppStore.API.TransactionInfo do
   @moduledoc """
   The module for Subscription Status
   """
