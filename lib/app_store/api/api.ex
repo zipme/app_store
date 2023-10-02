@@ -7,7 +7,9 @@ defmodule AppStore.API do
     TransactionHistory,
     SubscriptionStatus,
     ConsumptionInformation,
-    ExtendRenewalDate
+    ExtendRenewalDate,
+    TransactionInfo,
+    NotificationHistory
   }
 
   defdelegate get_transaction_history(
@@ -26,4 +28,10 @@ defmodule AppStore.API do
 
   defdelegate extend_renewal_date(api_config, token, original_transaction_id, body),
     to: ExtendRenewalDate
+
+  defdelegate get_transaction_info(api_config, token, original_transaction_id),
+    to: TransactionInfo
+
+  defdelegate get_notification_history(api_config, token, pagination_token, params),
+    to: NotificationHistory
 end
