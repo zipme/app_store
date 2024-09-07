@@ -20,6 +20,9 @@ defmodule AppStore.API do
               ),
               to: TransactionHistory
 
+  defdelegate get_transaction_info(api_config, token, transaction_id),
+    to: TransactionInfo
+
   defdelegate get_subscription_statuses(api_config, token, original_transaction_id),
     to: SubscriptionStatus
 

@@ -1,14 +1,14 @@
 defmodule AppStore.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.2.1"
   @url "https://github.com/linjunpop/app_store"
 
   def project do
     [
       app: :app_store,
       version: @version,
-      elixir: "~> 1.12",
+      elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -35,18 +35,12 @@ defmodule AppStore.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-
       # runtime deps
       {:finch, "~> 0.6"},
       {:jason, "~> 1.0"},
 
       # JWT
       {:joken, "~> 2.0"},
-
-      # NanoID
-      {:nanoid, "~> 2.0.5"},
 
       # doc
       {:ex_doc, "~> 0.24", only: :dev, runtime: false},
